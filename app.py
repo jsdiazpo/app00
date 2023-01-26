@@ -22,7 +22,7 @@ with block1:
     b1l, b1r = st.columns(2)
     # left column
     mu    = b1l.slider('mu', min_value=-10, max_value=10, value=0, step=1)
-    sigma = b1l.slider('sigma', min_value=1., max_value=10., value=1., step=.5)
+    sigma = b1l.slider('sigma', min_value=0.1, max_value=10., value=.5, step=.5)
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(2, 2))
     x_axis = np.linspace(-10, 10, 100)
     ax.plot(x_axis, stats.norm.pdf(x_axis, mu, sigma))
@@ -32,6 +32,3 @@ with block1:
 
     # right column
     b1r.pyplot(fig)
-
-
-
