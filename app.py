@@ -10,15 +10,15 @@ block3 = st.container()
 
 
 with header:
-    st.title('new app')
+    st.title('Gaussian distribution')
 
 
 
 
 
 with block1:
-    st.header('block1')
-    st.markdown('bla '*100)
+    # st.header('block1')
+    # st.markdown('bla '*100)
     b1l, b1r = st.columns(2)
     # left column
     mu    = b1l.slider('mu', min_value=-10, max_value=10, value=0, step=1)
