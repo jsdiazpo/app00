@@ -27,6 +27,9 @@ with block1:
     x_axis = np.linspace(-10, 10, 100)
     ax.plot(x_axis, stats.norm.pdf(x_axis, mu, sigma))
     ax.set(ylim=[0,.5])
+    # boxs = dict(boxstyle="round", ec='gray', fc='w')
+    ax.text(3, .43, f'$\mu$={mu}')
+    ax.text(3., .38, f'$\sigma$={sigma:.2f}')
     ax.grid(zorder=0, alpha=0.25, lw=0.5)
 
 
