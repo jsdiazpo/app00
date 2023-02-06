@@ -33,19 +33,27 @@ def load_bw_data(W):
 
 
 with block1:
-    W = 1
-    st.header(f'Blast Wave for {W} kg of TNT')
+
+    # W = 1
+    st.header(f'Blast Wave for a TNT charge')
     bl, br = st.columns(2)
+    W_values = ['1 kg', '10 kg', '100 kg']
+    W_value = bl.radio('Select TNT charge', W_values)
+    W = float(W_value.split()[0])
+    # bl.write('some text', W)
+
+
     df = load_bw_data(W)
     # st.dataframe(df[['t', 'R']].loc[700:750].round(2))
+    # st.dataframe(df.head().round(2))
 
-    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(2, 2))
+    fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(3, 2))
     # x_axis = np.linspace(-10, 10, 100)
     t_scale = 1e3  # milisecs
     ax.plot(df['t']* t_scale, df['R'], c='tomato', lw=2)
     # ax.plot(df['tau'], df['z'])
     ax.set(xlabel='t (ms)', ylabel='R (m)', 
-            xlim=[0,1e-3 * t_scale], ylim=[0,1.5], )
+            xlim=[0,1e-3 * t_scale], ylim=[0,3.5], )
     # boxs = dict(boxstyle="round", ec='gray', fc='w')
     ax.grid(zorder=0, alpha=0.25, lw=0.5)
     br.pyplot(fig)
