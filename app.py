@@ -38,7 +38,7 @@ with block1:
     st.header(f'Blast Wave for a TNT charge')
     bl, br = st.columns(2)
     W_values = ['1 kg', '10 kg', '100 kg']
-    W_value = bl.radio('Select TNT charge', W_values)
+    W_value = bl.radio('Select a TNT charge', W_values)
     W = float(W_value.split()[0])
     # bl.write('some text', W)
 
